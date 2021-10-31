@@ -10,21 +10,18 @@ import {ReactComponent as DarkModeOn} from '../assets/images/darkModeOn.svg'
 import {ThemeWrapper} from '../App';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        backgroundColor: theme.palette.primary.light
-    },
     darkModeText: {
         textTransform: 'none'
     }
 }))
 
 const Header = () => {
-    const {toggleTheme, darkMode} = useContext(ThemeWrapper);
+    const {toggleTheme, darkMode, theme} = useContext(ThemeWrapper);
     const classes = useStyles();
     const muiTheme = useTheme();
 	const isSmallScreen = useMediaQuery(muiTheme.breakpoints.down('md'));
     return (
-        <Box display='flex' py={2} px={isSmallScreen? 2 :7} justifyContent='space-between' alignItems='center' boxShadow={1} className={classes.root}>
+        <Box display='flex' py={2} px={isSmallScreen? 2 :7} justifyContent='space-between' alignItems='center' boxShadow={1} bgcolor={theme.palette.primary.light}>
             <Typography variant={isSmallScreen ? 'subtitle1' :'h5'} color='textPrimary'><b>Where is the world?</b></Typography>
             <Button startIcon={darkMode ? <DarkModeOn /> : <DarkModeOff />} onClick={toggleTheme}>
                 <Typography variant={isSmallScreen ? 'caption' :'subtitle2'} className={classes.darkModeText}>

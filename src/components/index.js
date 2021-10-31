@@ -1,4 +1,5 @@
 import Header from './header';
 import Body from './body';
+import DetailedComponent from './detailedComponent';
 
-export {Header, Body};
+export {Header, Body, DetailedComponent};
