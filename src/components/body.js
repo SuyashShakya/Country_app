@@ -61,7 +61,7 @@ const Body = ({history}) => {
     } 
     
     return (
-        <Box p={isMediumScreen ? 1 : 5} height='100vh' bgcolor={theme.palette.primary.main}>
+        <Box p={isMediumScreen ? 1 : 5} bgcolor={theme.palette.primary.main}>
             <Box 
                 display='flex' 
                 ml={!isMediumScreen ? 5 : (!isMediumScreen && !isSmallScreen) ? 1 : 0} 
